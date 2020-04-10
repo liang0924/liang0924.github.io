@@ -28,6 +28,7 @@
 
   
 
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 </html>
@@ -45,7 +46,7 @@
     
   <div class="cover-frame">
     <div class="bg-box">
-      <img src="/images/cover1.jpg" alt="image frame" />
+      <img src="/images/cover3.jpg" alt="image frame" />
     </div>
     <div class="cover-inner text-center text-white">
       <h1><a href="/">Hexo</a></h1>
@@ -75,6 +76,282 @@
     
     
     
+    <article id="post-第三章  处理机调度和死锁" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/10/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%20%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E5%92%8C%E6%AD%BB%E9%94%81/"
+    >第三章  处理机调度和死锁</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/10/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%20%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E5%92%8C%E6%AD%BB%E9%94%81/" class="article-date">
+  <time datetime="2020-04-10T08:34:31.830Z" itemprop="datePublished">2020-04-10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h3 id="第三章-处理机调度和死锁"><a href="#第三章-处理机调度和死锁" class="headerlink" title="第三章  处理机调度和死锁"></a>第三章  处理机调度和死锁</h3><h4 id="3-1-处理机调度的层次和调度算法的目标"><a href="#3-1-处理机调度的层次和调度算法的目标" class="headerlink" title="3.1  处理机调度的层次和调度算法的目标"></a>3.1  处理机调度的层次和调度算法的目标</h4><ul>
+<li><h5 id="处理机调度的层次"><a href="#处理机调度的层次" class="headerlink" title="处理机调度的层次"></a>处理机调度的层次</h5><p>1&gt;高级调度：长程调度或作业调度。将外存上的作业调入内存。</p>
+<p>2&gt;低级调度：进程调度或短程调度，根据某种算法给进程分配处理机。</p>
+<p>3&gt;中级调度：内存调度，将暂时不能运行的进程调至外存等待，此时进程为挂起状态。以后再由中级调度来</p>
+<p>​                        把外存上的那些具有运行条件的就绪进程再重新调入内存，修改为就绪状态。</p>
+</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-第五章  虚拟存储器" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/10/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%20%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/"
+    >第五章  虚拟存储器</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/10/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%20%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/" class="article-date">
+  <time datetime="2020-04-10T08:34:31.827Z" itemprop="datePublished">2020-04-10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h3 id="第五章-虚拟存储器"><a href="#第五章-虚拟存储器" class="headerlink" title="第五章  虚拟存储器"></a>第五章  虚拟存储器</h3><h4 id="5-1-虚拟存储器概述"><a href="#5-1-虚拟存储器概述" class="headerlink" title="5.1  虚拟存储器概述"></a>5.1  虚拟存储器概述</h4><p>虚拟存储器从逻辑上实现了对内存容量的扩充。</p>
+<ul>
+<li><h5 id="常规存储管理方式的特征和局部性原理"><a href="#常规存储管理方式的特征和局部性原理" class="headerlink" title="常规存储管理方式的特征和局部性原理"></a>常规存储管理方式的特征和局部性原理</h5><p>1&gt;特征：一次性、驻留性。</p>
+<p>2&gt;局部性原理：程序的执行仅局限于某个部分，它访问的存储空间也局限于某个区域。</p>
+<p>​                            时间局限性：指令的重复执行，数据的重复访问。</p>
+<p>​                            空间局限性：存储单元集中访问。</p>
+<p>3&gt;基本工作情况：程序执行时，若它所要访问的页已调入内存，便继续执行，否则发出缺页中断请求，此时</p>
+<p>​                                如果内存已满，OS利用页的置换功能，将内存中暂时不用的页调至盘上。</p>
+</li>
+<li><h5 id="虚拟存储器的定义和特征"><a href="#虚拟存储器的定义和特征" class="headerlink" title="虚拟存储器的定义和特征"></a>虚拟存储器的定义和特征</h5><p>1&gt;定义：具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储器系统。其逻辑容量是</p>
+<p>​                由内存容量和外存容量之和所决定的。</p>
+<p>2&gt;特征：多次性、对换性、虚拟性。</p>
+</li>
+<li><h5 id="虚拟存储器的实现方法"><a href="#虚拟存储器的实现方法" class="headerlink" title="虚拟存储器的实现方法"></a>虚拟存储器的实现方法</h5><p>建立在离散分配存储管理方式的基础上</p>
+<p>1&gt;分页请求系统</p>
+<p>2&gt;请求分段系统</p>
+</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-第四章  存储管理器" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/10/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%20%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E5%99%A8/"
+    >第四章  存储管理器</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/10/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%20%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="article-date">
+  <time datetime="2020-04-10T08:34:31.821Z" itemprop="datePublished">2020-04-10</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h3 id="第四章-存储管理器"><a href="#第四章-存储管理器" class="headerlink" title="第四章  存储管理器"></a>第四章  存储管理器</h3><h4 id="4-1-存储器的层次结构"><a href="#4-1-存储器的层次结构" class="headerlink" title="4.1  存储器的层次结构"></a>4.1  存储器的层次结构</h4><ul>
+<li><h5 id="多层结构的存储器系统"><a href="#多层结构的存储器系统" class="headerlink" title="多层结构的存储器系统"></a>多层结构的存储器系统</h5><p>存储管理范畴：寄存器、高速缓存、主存储器，磁盘缓存。掉电后存储的信息不再存在。</p>
+<p>设备管理范畴：固定磁盘、可移动存储介质。存储的信息被长期保存。</p>
+</li>
+</ul>
+<h4 id="4-2-程序的装入和链接"><a href="#4-2-程序的装入和链接" class="headerlink" title="4.2  程序的装入和链接"></a>4.2  程序的装入和链接</h4><p>程序的运行需要经历三个步骤：编译、链接、装入。</p>
+<ul>
+<li><h5 id="程序的装入"><a href="#程序的装入" class="headerlink" title="程序的装入"></a>程序的装入</h5><p>1.绝对装入方式：用户程序编译后直接产生绝对地址（物理地址），然后装入。</p>
+<p>2.可重定位装入方式：将逻辑地址转换成绝对地址。地址变换在进程装入时一次完成的，以后不再改变，故称</p>
+<p>​                                      为静态重定位。</p>
+<p>3.动态运行时的装入方式：装入时不进行地址转换，程序真正执行时再转换。</p>
+</li>
+<li><h5 id="程序的链接"><a href="#程序的链接" class="headerlink" title="程序的链接"></a>程序的链接</h5><p>1.静态链接方式：程序运行之前，将各目标模块及它们所需库函数链接成一个完整的装配模块，以后不再分开</p>
+<p>2.装入时动态链接：边装入边链接，便于修改和更新，便于实现对目标模块的共享。</p>
+<p>3.运行时动态链接：程序执行过程中，再去链接相应模块。</p>
+</li>
+</ul>
+<h4 id="4-3-连续分配存储管理"><a href="#4-3-连续分配存储管理" class="headerlink" title="4.3  连续分配存储管理"></a>4.3  连续分配存储管理</h4><ul>
+<li><h5 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h5></li>
+<li><h5 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h5><p>1&gt;划分分区的方法：分区大小相等、分区大小不等</p>
+<p>2&gt;内存分配：使用分区使用表，将分区按大小进行排队，每个表项包括地址，大小和状态</p>
+</li>
+<li><h5 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h5><p>根据进程的实际需求，动态地为之分配内存空间。</p>
+<p>1&gt;数据结构：空闲分区表，空闲分区链。</p>
+<p>2&gt;动态分区分配算法：顺序搜索算法，索引搜索算法</p>
+<p>3&gt;分区分配操作：分配内存，回收内存。</p>
+</li>
+<li><h5 id="动态可重定位分区分配"><a href="#动态可重定位分区分配" class="headerlink" title="动态可重定位分区分配"></a>动态可重定位分区分配</h5></li>
+</ul>
+<h4 id="4-4-对换（Swapping）"><a href="#4-4-对换（Swapping）" class="headerlink" title="4.4  对换（Swapping）"></a>4.4  对换（Swapping）</h4><ul>
+<li><h5 id="多道程序环境下的对换技术"><a href="#多道程序环境下的对换技术" class="headerlink" title="多道程序环境下的对换技术"></a>多道程序环境下的对换技术</h5><p>1&gt;对换的引入：把内存中暂时不能运行的进程或者暂时不用的程序和数据换到外存中。再把已具备运行条件的进程或进程所需要的程序和数据换入内存。</p>
+<p>2&gt;对换的类型：整体对换，页面（分段）对换。</p>
+</li>
+<li><h5 id="对换空间的管理"><a href="#对换空间的管理" class="headerlink" title="对换空间的管理"></a>对换空间的管理</h5><p>1&gt;主要目标：磁盘空间主要分为文件区和对换区两部分。</p>
+<p>​                        对文件区管理的目标是提高文件存储空间的利用率，采用离散分配方式。</p>
+<p>​                        对对换空间管理的目标是提高进程换入和换出的速度，采取连续分配方式。</p>
+<p>2&gt;数据结构：与内存在动态分区分配方式中所用数据结构相似。</p>
+<p>3&gt;对换空间的分配与回收：也类似动态分区分配。</p>
+</li>
+<li><h5 id="进程的换入换出"><a href="#进程的换入换出" class="headerlink" title="进程的换入换出"></a>进程的换入换出</h5></li>
+</ul>
+<h4 id="4-5-离散分配存储管理方式"><a href="#4-5-离散分配存储管理方式" class="headerlink" title="4.5  离散分配存储管理方式"></a>4.5  离散分配存储管理方式</h4><ul>
+<li><h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>连续分配方式会形成许多“碎片”，虽然可以通过“紧凑”方法拼接，但是开销较大。如果允许将一个进程直接分散地装入到许多不相邻接的分区中，便可充分利用内存空间。</p>
+</li>
+<li><h5 id="三种分配方式"><a href="#三种分配方式" class="headerlink" title="三种分配方式"></a>三种分配方式</h5><p>1&gt;分页存储管理方式：将用户程序的地址空间分为若干个固定大小的区域，称为“页”，典型页面大小为1KB，</p>
+<p>​                                       相应的，也将内存空间分为若干物理块或页框，页和块的大小相同。提高利用率。</p>
+<p>2&gt;分段存储管理方式：为了满足用户需求，它将用户程序的地址空间分为若干个大小不同的段，每段是一段</p>
+<pre><code>完整的信息。在存储分配时，以段为单位。</code></pre><p>3&gt;段页式存储管理方式：先将用户程序分段，再将每个段分页。</p>
+</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-第二章  进程的描述与控制" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -97,6 +374,10 @@
   <time datetime="2020-04-10T03:27:17.531Z" itemprop="datePublished">2020-04-10</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+  </div>
+
       
       
       
@@ -212,82 +493,6 @@
 
 </article>
     
-    <article id="post-hello-world" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/04/10/hello-world/"
-    >Hello World</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/04/10/hello-world/" class="article-date">
-  <time datetime="2020-04-10T02:28:21.699Z" itemprop="datePublished">2020-04-10</time>
-</a>
-      
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
   </article>
   
 
@@ -367,18 +572,6 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="http://shenyu-vip.lofter.com" target="_blank" rel="noopener">摄影</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2019/about">关于我</a>
     </li>
     
   </ul>
@@ -585,6 +778,23 @@
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
 
 
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=1438568051&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
     
   </div>
 </body>
