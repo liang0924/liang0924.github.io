@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>fhl&#39;s blog</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-10T13:06:22.024Z</updated>
+  <updated>2020-04-14T08:01:41.776Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第三章  处理机调度和死锁</title>
-    <link href="http://yoursite.com/2020/04/10/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%20%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E5%92%8C%E6%AD%BB%E9%94%81/"/>
-    <id>http://yoursite.com/2020/04/10/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%20%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E5%92%8C%E6%AD%BB%E9%94%81/</id>
-    <published>2020-04-10T08:34:31.830Z</published>
-    <updated>2020-04-10T13:06:22.024Z</updated>
+    <title>python进阶</title>
+    <link href="http://yoursite.com/2020/04/14/python%E8%BF%9B%E9%98%B6/"/>
+    <id>http://yoursite.com/2020/04/14/python%E8%BF%9B%E9%98%B6/</id>
+    <published>2020-04-14T07:56:13.008Z</published>
+    <updated>2020-04-14T08:01:41.776Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,59 @@
       
         
         
-          &lt;h3 id=&quot;第三章-处理机调度和死锁&quot;&gt;&lt;a href=&quot;#第三章-处理机调度和死锁&quot; class=&quot;headerlink&quot; title=&quot;第三章  处理机调度和死锁&quot;&gt;&lt;/a&gt;第三章  处理机调度和死锁&lt;/h3&gt;&lt;h4
+          &lt;h3 id=&quot;一、迭代&quot;&gt;&lt;a href=&quot;#一、迭代&quot; class=&quot;headerlink&quot; title=&quot;一、迭代&quot;&gt;&lt;/a&gt;一、迭代&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;迭代是访问集合元素的一种方式，迭代器是一个可以记住遍历的位置的对象。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python基础</title>
+    <link href="http://yoursite.com/2020/04/14/python%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2020/04/14/python%E5%9F%BA%E7%A1%80/</id>
+    <published>2020-04-14T03:22:18.340Z</published>
+    <updated>2020-04-14T03:24:11.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、环境搭建&quot;&gt;&lt;a href=&quot;#一、环境搭建&quot; class=&quot;headerlink&quot; title=&quot;一、环境搭建&quot;&gt;&lt;/a&gt;一、环境搭建&lt;/h3&gt;&lt;p&gt;仅介绍windows平台环境的搭建&lt;/p&gt;
+&lt;p&gt;1、打开 WEB 浏览器访问 &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统基础</title>
+    <link href="http://yoursite.com/2020/04/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2020/04/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</id>
+    <published>2020-04-11T01:44:37.743Z</published>
+    <updated>2020-04-13T08:46:05.345Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;第一章-操作系统引论&quot;&gt;&lt;a href=&quot;#第一章-操作系统引论&quot; class=&quot;headerlink&quot; title=&quot;第一章  操作系统引论&quot;&gt;&lt;/a&gt;第一章  操作系统引论&lt;/h3&gt;&lt;h4 id=&quot;1-1-什么是操作系统&quot;&gt;&lt;a
         
       
     
@@ -42,11 +94,11 @@
   </entry>
   
   <entry>
-    <title>第五章  虚拟存储器</title>
-    <link href="http://yoursite.com/2020/04/10/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%20%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/"/>
-    <id>http://yoursite.com/2020/04/10/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%20%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/</id>
-    <published>2020-04-10T08:34:31.827Z</published>
-    <updated>2020-04-10T13:16:07.661Z</updated>
+    <title>hexo的使用</title>
+    <link href="http://yoursite.com/2020/04/10/hexo%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2020/04/10/hexo%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2020-04-10T15:57:48.960Z</published>
+    <updated>2020-04-10T15:58:23.415Z</updated>
     
     <summary type="html">
     
@@ -54,64 +106,14 @@
       
         
         
-          &lt;h3 id=&quot;第五章-虚拟存储器&quot;&gt;&lt;a href=&quot;#第五章-虚拟存储器&quot; class=&quot;headerlink&quot; title=&quot;第五章  虚拟存储器&quot;&gt;&lt;/a&gt;第五章  虚拟存储器&lt;/h3&gt;&lt;h4 id=&quot;5-1-虚拟存储器概述&quot;&gt;&lt;a
+          &lt;h3 id=&quot;hexo的使用&quot;&gt;&lt;a href=&quot;#hexo的使用&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
-      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>第四章  存储管理器</title>
-    <link href="http://yoursite.com/2020/04/10/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%20%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E5%99%A8/"/>
-    <id>http://yoursite.com/2020/04/10/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%20%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E5%99%A8/</id>
-    <published>2020-04-10T08:34:31.821Z</published>
-    <updated>2020-04-10T13:16:00.821Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;第四章-存储管理器&quot;&gt;&lt;a href=&quot;#第四章-存储管理器&quot; class=&quot;headerlink&quot; title=&quot;第四章  存储管理器&quot;&gt;&lt;/a&gt;第四章  存储管理器&lt;/h3&gt;&lt;h4 id=&quot;4-1-存储器的层次结构&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>第二章  进程的描述与控制</title>
-    <link href="http://yoursite.com/2020/04/10/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%20%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/"/>
-    <id>http://yoursite.com/2020/04/10/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%20%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/</id>
-    <published>2020-04-10T03:27:17.531Z</published>
-    <updated>2020-04-10T12:53:14.518Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;第二章-进程的描述与控制&quot;&gt;&lt;a href=&quot;#第二章-进程的描述与控制&quot; class=&quot;headerlink&quot; title=&quot;第二章  进程的描述与控制&quot;&gt;&lt;/a&gt;第二章  进程的描述与控制&lt;/h3&gt;&lt;h4 id=&quot;2-1-前驱图和程序执行&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="other" scheme="http://yoursite.com/categories/other/"/>
     
     
   </entry>

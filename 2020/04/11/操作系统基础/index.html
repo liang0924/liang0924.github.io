@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    操作系统基础 |  fhl&#39;s blog
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="fhl's blog" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content on">
+      <section class="outer">
+  <article id="post-操作系统基础" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  操作系统基础
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2020-04-11T01:44:37.743Z" itemprop="datePublished">2020-04-11</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">8.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">30 min</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h3 id="第一章-操作系统引论"><a href="#第一章-操作系统引论" class="headerlink" title="第一章  操作系统引论"></a>第一章  操作系统引论</h3><h4 id="1-1-什么是操作系统"><a href="#1-1-什么是操作系统" class="headerlink" title="1.1 什么是操作系统"></a>1.1 什么是操作系统</h4><p>操作系统是配置在计算机硬件上的第一层软件，是对硬件系统的首次扩充。其主要作用是管理好这些设备，提高它们的利用率和系统的吞吐量，并为用户和应用程序提供一个简单的接口，便于用户使用。</p>
+<h4 id="1-2-操作系统的发展过程"><a href="#1-2-操作系统的发展过程" class="headerlink" title="1.2  操作系统的发展过程"></a>1.2  操作系统的发展过程</h4><ul>
+<li><h5 id="早期的计算机没有配置OS，采取人工操作的方式进行，操作流程为："><a href="#早期的计算机没有配置OS，采取人工操作的方式进行，操作流程为：" class="headerlink" title="早期的计算机没有配置OS，采取人工操作的方式进行，操作流程为："></a>早期的计算机没有配置OS，采取人工操作的方式进行，操作流程为：</h5><p>①将纸带上的数据输入计算机 //此时cpu处于空闲，被浪费</p>
+<p>②启动计算机运行</p>
+<p>③当程序运行完毕并取走计算结果，才允许下一个用户上机</p>
+<p>​    然后出现了脱机技术，改进了数据的输入过程，首先通过外围机控制把数据输入到磁带上，当CPU需要时，从磁盘调入内存。输出也同理。</p>
+</li>
+<li><h5 id="单道批处理系统"><a href="#单道批处理系统" class="headerlink" title="单道批处理系统"></a>单道批处理系统</h5><p>首先把一批作业已脱机方式输入到磁带上，然后一个一个处理，内存中始终只有一个程序。当程序发出IO请求时，CPU就会处于等待状态，故CPU利用率也不高</p>
+</li>
+<li><h5 id="多道批处理系统"><a href="#多道批处理系统" class="headerlink" title="多道批处理系统"></a>多道批处理系统</h5><p>首先把作业先存放在外存上并排成一个队列，然后选择若干个作业调入内存，当运行程序A时，因IO操作而暂停执行的CPU空档时间，运行其他程序，由于作业排队执行，故周转时间较长，且没有交互能力。</p>
+</li>
+<li><h5 id="分时系统"><a href="#分时系统" class="headerlink" title="分时系统"></a>分时系统</h5><p>分时系统是指，在一台主机上连接了多个配有显示器和键盘的终端并由此组成的系统，该系统允许多个用户同时通过自己的终端，以交互方式使用计算机，共享主机中的资源。</p>
+<p>配置一个多路卡以实现及时接收多个用户键入的命令或数据，实现了多路复用。周期性扫描各个终端，用于接收终端的数据。</p>
+<p>作业直接进入内存，采用轮转运行方式执行作业，每个作业只能运行一个时间片，从而使用户的请求得到及时处理。</p>
+</li>
+<li><h5 id="实时系统"><a href="#实时系统" class="headerlink" title="实时系统"></a>实时系统</h5><p>实时系统是指系统能够及时响应外部的请求，在规定的时间内完成对该事件的处理， 并控制所有实时任务一致的执行。</p>
+<p>实时系统有两类，周期性实时任务和非周期性实时任务，非周期性有一个截止时间，分别是开始截止时间和完成截止时间。</p>
+</li>
+<li><h5 id="实时系统和分时系统的比较"><a href="#实时系统和分时系统的比较" class="headerlink" title="实时系统和分时系统的比较"></a>实时系统和分时系统的比较</h5><p>分时系统的响应时间由用户所能接受的等待时间决定，实时系统的响应时间由控制对象所能接受的时延决定。</p>
+</li>
+</ul>
+<h4 id="1-3-微机操作系统的发展"><a href="#1-3-微机操作系统的发展" class="headerlink" title="1.3  微机操作系统的发展"></a>1.3  微机操作系统的发展</h4><p>微机操作系统可按微机的字长来分，32位/64位。</p>
+<ul>
+<li><h5 id="单用户单任务操作系统"><a href="#单用户单任务操作系统" class="headerlink" title="单用户单任务操作系统"></a>单用户单任务操作系统</h5><p>只允许一个用户上机，且只允许用户程序作为一个任务执行，主要配置在8/16位。</p>
+</li>
+<li><h5 id="单用户多任务操作系统"><a href="#单用户多任务操作系统" class="headerlink" title="单用户多任务操作系统"></a>单用户多任务操作系统</h5><p>只允许一个用户上机，但允许用户把程序分为若干个任务使它们并发执行。主要配置在32位操作系统上，如早期Windows操作系统。</p>
+</li>
+<li><h5 id="多用户多任务操作系统"><a href="#多用户多任务操作系统" class="headerlink" title="多用户多任务操作系统"></a>多用户多任务操作系统</h5><p>允许多个用户通过各自的终端，使用同一台机器，共享主机系统中的各种资源。如Linux和现在的windows。</p>
+</li>
+</ul>
+<h4 id="1-4-操作系统的基本特性"><a href="#1-4-操作系统的基本特性" class="headerlink" title="1.4  操作系统的基本特性"></a>1.4  操作系统的基本特性</h4><ul>
+<li><h5 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h5><p>并发和并行是两个不同的概念，并行是指多个事件在同一时刻发生，并发是在同一时间发生。</p>
+</li>
+<li><h5 id="共享"><a href="#共享" class="headerlink" title="共享"></a>共享</h5><p>互斥共享和同时共享</p>
+</li>
+<li><h5 id="虚拟"><a href="#虚拟" class="headerlink" title="虚拟"></a>虚拟</h5></li>
+<li><h5 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h5><p>执行完函数或方法后，不必阻塞性地等待返回值或消息，只需要向系统委托一个异步过程，那么当系统接收到返回值或消息时，系统会自动触发委托的异步过程，从而完成一个完整的流程。 </p>
+</li>
+</ul>
+<h3 id="第二章-进程的描述与控制"><a href="#第二章-进程的描述与控制" class="headerlink" title="第二章  进程的描述与控制"></a>第二章  进程的描述与控制</h3><h4 id="2-1-前驱图和程序执行"><a href="#2-1-前驱图和程序执行" class="headerlink" title="2.1  前驱图和程序执行"></a>2.1  前驱图和程序执行</h4><ul>
+<li><p>前驱图是指一个有向无循环图，用于描述进程之间执行的先后顺序。</p>
+</li>
+<li><p>一个应用程序由若干程序段组成，每一程序段完成特定的功能，它们在执行时，都需 </p>
+<p>要按照某种先后次序执行。程序执行具有三个特征，顺序性、封闭性、可再现性。</p>
+</li>
+<li><p>程序的并发执行：不存在前驱关系的程序之间可以并发执行。三个新特征：间断性、失去封闭性、不可再现性</p>
+</li>
+</ul>
+<h4 id="2-2-进程的描述"><a href="#2-2-进程的描述" class="headerlink" title="2.2  进程的描述"></a>2.2  进程的描述</h4><ul>
+<li><h5 id="进程的定义"><a href="#进程的定义" class="headerlink" title="进程的定义"></a>进程的定义</h5><p>通常的程序不能参与并发执行，为了能使程序并发执行，并且可以对并发执行的程序加以描述和控制，引入进程的概念。</p>
+<p>创建进程就是创建进程实体中的PCB(进程控制块)，进程实体由程序段、相关的数据段和PCB构成。</p>
+<p>进程是程序的一次运行，是系统进行资源分配和调度的一个独立单位。</p>
+</li>
+<li><h5 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h5><p>①动态性：进程实体具有生命周期</p>
+<p>②并发性</p>
+<p>③独立性</p>
+<p>④异步性：进程按各自独立，不可预见的速度向前推进，但通过进程同步机制，仍能保证并发执行的结果是可再现的。</p>
+</li>
+<li><h5 id="进程的三种状态"><a href="#进程的三种状态" class="headerlink" title="进程的三种状态"></a>进程的三种状态</h5><p>就绪状态、执行状态、阻塞状态。</p>
+<img src="/images/图片1.png" style="zoom:70%;" />
+</li>
+<li><h5 id="进程管理中的数据结构"><a href="#进程管理中的数据结构" class="headerlink" title="进程管理中的数据结构"></a>进程管理中的数据结构</h5><p>1&gt;进程控制块PCB的作用：作为独立运行基本单位的标志，用于描述进程的当前情况以及管理进程运行的全部信息，保存CPU现场信息以实现间断性运行。还能实现与其他进程的同步与通信。</p>
+<p>2&gt;进程控制块中的信息：①进程标识符  ②处理机状态  ③进程调度信息  ④进程控制信息</p>
+<p>3&gt;进程控制块的组织方式：①线性方式  ②链接方式  ③索引方式</p>
+</li>
+</ul>
+<h4 id="2-3-进程控制"><a href="#2-3-进程控制" class="headerlink" title="2.3  进程控制"></a>2.3  进程控制</h4><p>进程控制是进程管理中最基本的功能，进程控制一般是由OS的内核中的原语来实现的。</p>
+<ul>
+<li><h5 id="操作系统内核"><a href="#操作系统内核" class="headerlink" title="操作系统内核"></a>操作系统内核</h5><p>一些与硬件紧密相关的模块，各种常用设备的驱动程序以及运行频率较高的模块，都安装在紧靠硬件的软件层次中，将它们常驻内存，称为OS内核。</p>
+<p>处理机的执行状态：1&gt;系统态，又称管态或内核态。2&gt;用户态，又称目态。</p>
+<p>OS内核的两大功能：1&gt;支撑功能。2&gt;资源管理功能</p>
+</li>
+<li><h5 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h5></li>
+<li><h5 id="进程的终止"><a href="#进程的终止" class="headerlink" title="进程的终止"></a>进程的终止</h5></li>
+<li><h5 id="进程的阻塞和唤醒：block和wakeup"><a href="#进程的阻塞和唤醒：block和wakeup" class="headerlink" title="进程的阻塞和唤醒：block和wakeup"></a>进程的阻塞和唤醒：block和wakeup</h5></li>
+<li><h5 id="进程的挂起和激活：suspend和active"><a href="#进程的挂起和激活：suspend和active" class="headerlink" title="进程的挂起和激活：suspend和active"></a>进程的挂起和激活：suspend和active</h5></li>
+</ul>
+<h4 id="2-4-进程同步"><a href="#2-4-进程同步" class="headerlink" title="2.4  进程同步"></a>2.4  进程同步</h4><ul>
+<li><h5 id="进程同步的基本概念"><a href="#进程同步的基本概念" class="headerlink" title="进程同步的基本概念"></a>进程同步的基本概念</h5><p>进程同步机制的主要任务，是对多个相关进程在执行次序上进行协调，使并发执行的诸进程之间能按照一定的规则或时序共享系统资源，并能很好的相互合作，从而使程序的执行具有可再现性。</p>
+<p>有两种形式的制约关系，间接和直接相互制约。由于存在制约，故进程运行速度并不能由自身所控制，此即进程的异步性。</p>
+<p>临界资源：需要互斥访问。</p>
+<p>临界区：访问临界资源的那段代码。相对应的还有进入区，退出区，剩余区。</p>
+<p>同步进制应遵循的规则：</p>
+<p>1&gt;空闲让进    2&gt;忙则等待    3&gt;有限等待   4&gt;让权等待：释放处理机</p>
+</li>
+<li><h5 id="硬件同步机制"><a href="#硬件同步机制" class="headerlink" title="硬件同步机制"></a>硬件同步机制</h5><p>1&gt;关中断</p>
+<p>2&gt;利用Test-and-Set指令</p>
+<p>3&gt;利用Swap指令实现进程互斥</p>
+</li>
+<li><h5 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h5><p>1&gt;整型信号量：定义一个表示资源数目的整型量S,通过wait和signal操作访问，会出现忙等状态。</p>
+<p>2&gt;记录型信号量：有两个变量，一个是表示资源数目的整型变量value，一个是进程列表指针list。</p>
+<p>​                                当资源数为0时，使用block原语自我阻塞，放弃处理机。</p>
+<p>3&gt;AND型信号量：将进程需要的所有资源一次性全部分配给进程，只要有一个分配不了，其他资源也不分配</p>
+<p>4&gt;信号量集：可以一次分配多个资源。Swait(S1,t1,d1,…,Sn,tn,dn)。</p>
+<p>​                        t：分配下限值，S必须大于或等于它才能进行资源分配    d：资源需求值。</p>
+</li>
+<li><h5 id="信号量的应用"><a href="#信号量的应用" class="headerlink" title="信号量的应用"></a>信号量的应用</h5><p>1&gt;利用信号量实现进程互斥</p>
+<p>2&gt;利用信号量实现前趋关系</p>
+</li>
+</ul>
+<h4 id="2-7-线程的基本概念"><a href="#2-7-线程的基本概念" class="headerlink" title="2.7  线程的基本概念"></a>2.7  线程的基本概念</h4><ul>
+<li><h5 id="线程的引入"><a href="#线程的引入" class="headerlink" title="线程的引入"></a>线程的引入</h5><p>在OS中引入进程的目的是为了使多个进程能并发执行，以提高资源利用率和系统吞吐量。在OS中引入线程则是为了减少程序在并发执行时所付出的时空开销，使OS具有更好的并发性。</p>
+<p>1&gt;进程的两个基本属性：可拥有资源的独立单位；可独立调度和分派的基本单位。</p>
+<p>2&gt;程序并发执行所需付出的时空开销</p>
+<p>​    1.创建进程    2.撤销进程    3.进程切换</p>
+<p>3&gt;线程—-作为调度和分派的基本单位。</p>
+</li>
+<li><h5 id="线程和进程的比较"><a href="#线程和进程的比较" class="headerlink" title="线程和进程的比较"></a>线程和进程的比较</h5><p>1&gt;  引入线程后调度的基本单位是线程，线程是能独立运行的基本单位，线程切换时代价小，且不会引起进程的切换。</p>
+<p>2&gt;  一个进程中的多个线程也可以并发执行。</p>
+<p>3&gt;  进程可以拥有资源，线程本身不拥有资源，只有一点能保证独立运行的资源，一个进程中的多个线程共享该进程所拥有的资源。同一进程的线程拥有相同的地址空间，所以独立性低。</p>
+<p>4&gt;  线程的系统开销小，而且支持多处理机系统，一个进程的多个线程可以同时在不同的处理机上运行。</p>
+</li>
+</ul>
+<h3 id="第三章-处理机调度和死锁"><a href="#第三章-处理机调度和死锁" class="headerlink" title="第三章  处理机调度和死锁"></a>第三章  处理机调度和死锁</h3><h4 id="3-1-处理机调度的层次和调度算法的目标"><a href="#3-1-处理机调度的层次和调度算法的目标" class="headerlink" title="3.1  处理机调度的层次和调度算法的目标"></a>3.1  处理机调度的层次和调度算法的目标</h4><ul>
+<li><h5 id="处理机调度的层次"><a href="#处理机调度的层次" class="headerlink" title="处理机调度的层次"></a>处理机调度的层次</h5><p>1&gt;高级调度：长程调度或作业调度。将外存上的作业调入内存。</p>
+<p>2&gt;低级调度：进程调度或短程调度，根据某种算法给进程分配处理机。</p>
+<p>3&gt;中级调度：内存调度，将暂时不能运行的进程调至外存等待，此时进程为挂起状态。以后再由中级调度来</p>
+<p>​                        把外存上的那些具有运行条件的就绪进程再重新调入内存，修改为就绪状态。</p>
+</li>
+</ul>
+<h3 id="第四章-存储管理器"><a href="#第四章-存储管理器" class="headerlink" title="第四章  存储管理器"></a>第四章  存储管理器</h3><h4 id="4-1-存储器的层次结构"><a href="#4-1-存储器的层次结构" class="headerlink" title="4.1  存储器的层次结构"></a>4.1  存储器的层次结构</h4><ul>
+<li><h5 id="多层结构的存储器系统"><a href="#多层结构的存储器系统" class="headerlink" title="多层结构的存储器系统"></a>多层结构的存储器系统</h5><p>存储管理范畴：寄存器、高速缓存、主存储器，磁盘缓存。掉电后存储的信息不再存在。</p>
+<p>设备管理范畴：固定磁盘、可移动存储介质。存储的信息被长期保存。</p>
+</li>
+</ul>
+<h4 id="4-2-程序的装入和链接"><a href="#4-2-程序的装入和链接" class="headerlink" title="4.2  程序的装入和链接"></a>4.2  程序的装入和链接</h4><p>程序的运行需要经历三个步骤：编译、链接、装入。</p>
+<ul>
+<li><h5 id="程序的装入"><a href="#程序的装入" class="headerlink" title="程序的装入"></a>程序的装入</h5><p>1.绝对装入方式：用户程序编译后直接产生绝对地址（物理地址），然后装入。</p>
+<p>2.可重定位装入方式：将逻辑地址转换成绝对地址。地址变换在进程装入时一次完成的，以后不再改变，故称</p>
+<p>​                                      为静态重定位。</p>
+<p>3.动态运行时的装入方式：装入时不进行地址转换，程序真正执行时再转换。</p>
+</li>
+<li><h5 id="程序的链接"><a href="#程序的链接" class="headerlink" title="程序的链接"></a>程序的链接</h5><p>1.静态链接方式：程序运行之前，将各目标模块及它们所需库函数链接成一个完整的装配模块，以后不再分开</p>
+<p>2.装入时动态链接：边装入边链接，便于修改和更新，便于实现对目标模块的共享。</p>
+<p>3.运行时动态链接：程序执行过程中，再去链接相应模块。</p>
+</li>
+</ul>
+<h4 id="4-3-连续分配存储管理"><a href="#4-3-连续分配存储管理" class="headerlink" title="4.3  连续分配存储管理"></a>4.3  连续分配存储管理</h4><ul>
+<li><h5 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h5></li>
+<li><h5 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h5><p>1&gt;划分分区的方法：分区大小相等、分区大小不等</p>
+<p>2&gt;内存分配：使用分区使用表，将分区按大小进行排队，每个表项包括地址，大小和状态</p>
+</li>
+<li><h5 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h5><p>根据进程的实际需求，动态地为之分配内存空间。</p>
+<p>1&gt;数据结构：空闲分区表，空闲分区链。</p>
+<p>2&gt;动态分区分配算法：顺序搜索算法，索引搜索算法</p>
+<p>3&gt;分区分配操作：分配内存，回收内存。</p>
+</li>
+<li><h5 id="动态可重定位分区分配"><a href="#动态可重定位分区分配" class="headerlink" title="动态可重定位分区分配"></a>动态可重定位分区分配</h5></li>
+</ul>
+<h4 id="4-4-对换（Swapping）"><a href="#4-4-对换（Swapping）" class="headerlink" title="4.4  对换（Swapping）"></a>4.4  对换（Swapping）</h4><ul>
+<li><h5 id="多道程序环境下的对换技术"><a href="#多道程序环境下的对换技术" class="headerlink" title="多道程序环境下的对换技术"></a>多道程序环境下的对换技术</h5><p>1&gt;对换的引入：把内存中暂时不能运行的进程或者暂时不用的程序和数据换到外存中。再把已具备运行条件的进程或进程所需要的程序和数据换入内存。</p>
+<p>2&gt;对换的类型：整体对换，页面（分段）对换。</p>
+</li>
+<li><h5 id="对换空间的管理"><a href="#对换空间的管理" class="headerlink" title="对换空间的管理"></a>对换空间的管理</h5><p>1&gt;主要目标：磁盘空间主要分为文件区和对换区两部分。</p>
+<p>​                        对文件区管理的目标是提高文件存储空间的利用率，采用离散分配方式。</p>
+<p>​                        对对换空间管理的目标是提高进程换入和换出的速度，采取连续分配方式。</p>
+<p>2&gt;数据结构：与内存在动态分区分配方式中所用数据结构相似。</p>
+<p>3&gt;对换空间的分配与回收：也类似动态分区分配。</p>
+</li>
+<li><h5 id="进程的换入换出"><a href="#进程的换入换出" class="headerlink" title="进程的换入换出"></a>进程的换入换出</h5></li>
+</ul>
+<h4 id="4-5-离散分配存储管理方式"><a href="#4-5-离散分配存储管理方式" class="headerlink" title="4.5  离散分配存储管理方式"></a>4.5  离散分配存储管理方式</h4><ul>
+<li><h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>连续分配方式会形成许多“碎片”，虽然可以通过“紧凑”方法拼接，但是开销较大。如果允许将一个进程直接分散地装入到许多不相邻接的分区中，便可充分利用内存空间。</p>
+</li>
+<li><h5 id="三种分配方式"><a href="#三种分配方式" class="headerlink" title="三种分配方式"></a>三种分配方式</h5><p>1&gt;分页存储管理方式：将用户程序的地址空间分为若干个固定大小的区域，称为“页”，典型页面大小为1KB，</p>
+<p>​                                       相应的，也将内存空间分为若干物理块或页框，页和块的大小相同。提高利用率。</p>
+<p>2&gt;分段存储管理方式：为了满足用户需求，它将用户程序的地址空间分为若干个大小不同的段，每段是一段</p>
+<pre><code>完整的信息。在存储分配时，以段为单位。</code></pre><p>3&gt;段页式存储管理方式：先将用户程序分段，再将每个段分页。</p>
+</li>
+</ul>
+<h3 id="第五章-虚拟存储器"><a href="#第五章-虚拟存储器" class="headerlink" title="第五章  虚拟存储器"></a>第五章  虚拟存储器</h3><h4 id="5-1-虚拟存储器概述"><a href="#5-1-虚拟存储器概述" class="headerlink" title="5.1  虚拟存储器概述"></a>5.1  虚拟存储器概述</h4><p>虚拟存储器从逻辑上实现了对内存容量的扩充。</p>
+<ul>
+<li><h5 id="常规存储管理方式的特征和局部性原理"><a href="#常规存储管理方式的特征和局部性原理" class="headerlink" title="常规存储管理方式的特征和局部性原理"></a>常规存储管理方式的特征和局部性原理</h5><p>1&gt;特征：一次性、驻留性。</p>
+<p>2&gt;局部性原理：程序的执行仅局限于某个部分，它访问的存储空间也局限于某个区域。</p>
+<p>​                            时间局限性：指令的重复执行，数据的重复访问。</p>
+<p>​                            空间局限性：存储单元集中访问。</p>
+<p>3&gt;基本工作情况：程序执行时，若它所要访问的页已调入内存，便继续执行，否则发出缺页中断请求，此时</p>
+<p>​                                如果内存已满，OS利用页的置换功能，将内存中暂时不用的页调至盘上。</p>
+</li>
+<li><h5 id="虚拟存储器的定义和特征"><a href="#虚拟存储器的定义和特征" class="headerlink" title="虚拟存储器的定义和特征"></a>虚拟存储器的定义和特征</h5><p>1&gt;定义：具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储器系统。其逻辑容量是</p>
+<p>​                由内存容量和外存容量之和所决定的。</p>
+<p>2&gt;特征：多次性、对换性、虚拟性。</p>
+</li>
+<li><h5 id="虚拟存储器的实现方法"><a href="#虚拟存储器的实现方法" class="headerlink" title="虚拟存储器的实现方法"></a>虚拟存储器的实现方法</h5><p>建立在离散分配存储管理方式的基础上</p>
+<p>1&gt;分页请求系统</p>
+<p>2&gt;请求分段系统</p>
+</li>
+</ul>
+<h3 id="第六章-输入输出系统"><a href="#第六章-输入输出系统" class="headerlink" title="第六章  输入输出系统"></a>第六章  输入输出系统</h3><h4 id="6-1-I-O系统的功能、模型和接口"><a href="#6-1-I-O系统的功能、模型和接口" class="headerlink" title="6.1  I/O系统的功能、模型和接口"></a>6.1  I/O系统的功能、模型和接口</h4><p>I/O系统管理的主要对象是I/O设备和相应的设备控制器。主要任务是完成用户提出的I/O请求，提高I/O速率，以及提高设备的利用率，并能为更高层的进程方便地使用这些设备提供手段</p>
+<ul>
+<li><h5 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h5><p>1&gt;隐藏物理设备的细节  2&gt;与设备的无关性  <strong><em>注：为了方便用户使用I/O设备</em></strong></p>
+<p>3&gt;提高cpu和I/O设备的利用率  4&gt;对I/O设备进行控制</p>
+<p>5&gt;确保对设备的正确共享  6&gt;错误处理</p>
+</li>
+<li><h5 id="I-O系统的层次结构和模型"><a href="#I-O系统的层次结构和模型" class="headerlink" title="I/O系统的层次结构和模型"></a>I/O系统的层次结构和模型</h5><p>采用层次式结构的I/O系统，每一层都是利用其下层提供的服务，完成某些子功能。</p>
+<p>1&gt;I/O软件的层次结构</p>
+<img src="/images/02.jpg" style="zoom:60%;" />
+
+<p>2&gt;I/O系统中各种模块之间的层次视图</p>
+<img src="/images/03.jpg" style="zoom:30%;" />
+</li>
+<li><h5 id="I-O系统接口"><a href="#I-O系统接口" class="headerlink" title="I/O系统接口"></a>I/O系统接口</h5><p>1&gt;块设备接口：该接口反映了大部分磁盘存储器和光盘存储器的本质特征，用于控制该类设备的输入输出。</p>
+<p>​        所谓块设备是指数据的存取和传输都以数据块为单位的设备，如磁盘。</p>
+<p>2&gt;流设备接口：字符设备接口，用于控制字符设备的输入和输出。</p>
+<p>​        所谓字符设备是指数据的存取和传输是以字符为单位的设备，如键盘。打印机。</p>
+<p>3&gt;网络通信接口。</p>
+</li>
+</ul>
+<h4 id="6-2-I-O设备和设备控制器"><a href="#6-2-I-O设备和设备控制器" class="headerlink" title="6.2  I/O设备和设备控制器"></a>6.2  I/O设备和设备控制器</h4><p>I/O设备一般是由执行I/O操作的机械部分和执行控制I/O的电子部件组成，通常前者称为I/O设备，后者称为设备控制器。</p>
+<ul>
+<li><h5 id="I-O设备"><a href="#I-O设备" class="headerlink" title="I/O设备"></a>I/O设备</h5><p>1&gt;I/O设备的类型：存储设备，也称外存，I/O设备，分为输入设备，输出设备，交互式设备</p>
+<p>2&gt;设备与控制器之间的接口：该接口有三种信号，数据信号线，控制信号线，状态信号线。</p>
+</li>
+<li><h5 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h5><p>控制一个或多个I/O设备，以实现I/O设备和计算机之间的数据交换，它是CPU和I/O设备之间的接口。</p>
+</li>
+<li><h5 id="内存映像I-O"><a href="#内存映像I-O" class="headerlink" title="内存映像I/O"></a>内存映像I/O</h5><p>驱动程序将抽象I/O命令转换出的一系列具体的命令、参数等数据装入设备控制器的相应寄存器，由控制器来执行这些命令，具体实施对I/O设备的控制。</p>
+</li>
+<li><h5 id="I-O通道"><a href="#I-O通道" class="headerlink" title="I/O通道"></a>I/O通道</h5><p>1&gt;I/O通道设备的引入</p>
+<p>为了继续减小CPU的负担，在CPU和设备控制器之间又增设了I/O通道，其主要目的是为了建立独立的I/O操作。使一些原来由CPU处理的I/O任务转由通道来承担。</p>
+<p>设置了通道之后，CPU只需要向通道发送一条I/O指令，通道在收到该指令后，便从内存中取出本次要执行的通道程序，然后执行该通道程序，仅当通道完成了I/O任务才向CPU发出中断信号。</p>
+<p>实际上I/O通道是一种特殊的处理机。通道没有自己的内存，与CPU共享内存。</p>
+<p>2&gt;通道类型</p>
+<p>①字节多路通道：多个子通道，每个子通道连接一台设备，按时间片轮转共享主通道。</p>
+<p>②数组选择通道：一个子通道，连接多台设备，独享通道</p>
+<p>③数组多路通道：多个子通道，每个子通道连接多台设备，共享主通道。</p>
+</li>
+</ul>
+<h4 id="6-3-中断机构和中断处理程序"><a href="#6-3-中断机构和中断处理程序" class="headerlink" title="6.3  中断机构和中断处理程序"></a>6.3  中断机构和中断处理程序</h4><p>中断在操作系统中有着特殊重要的地位，它是多道程序得以实现的基础，没有中断就不可能实现多道程序，因为进程的切换是通过中断来完成的。</p>
+<p>中断也是设备管理的基础，为了提高处理机的利用率和实现CPU与I/O设备并行执行，也必需有中断的支持。中断程序是I/O系统中最低的一层，它是整个I/O系统的基础。</p>
+<ul>
+<li><h5 id="中断简介"><a href="#中断简介" class="headerlink" title="中断简介"></a>中断简介</h5><p>中断是指CPU对I/O设备发来的中断信号的一种响应。</p>
+<p>中断向量表：存放中断处理程序的入口地址。</p>
+<p>中断处理方式：屏蔽中断（顺序）、嵌套中断（抢占）</p>
+</li>
+<li><h5 id="中断处理流程"><a href="#中断处理流程" class="headerlink" title="中断处理流程"></a>中断处理流程</h5><img src="/images/04.jpg" style="zoom:12%;" />
+
+</li>
+</ul>
+<h4 id="6-4-设备驱动程序"><a href="#6-4-设备驱动程序" class="headerlink" title="6.4  设备驱动程序"></a>6.4  设备驱动程序</h4><p>设备处理程序又称设备驱动程序，它是I/O系统的高层与设备控制器之间的通信程序，接收上层发送的抽象I/O请求，再把它转换为具体要求后，发送给设备控制器，启动设备去执行。</p>
+<ul>
+<li><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>1&gt;功能：将抽象命令转换为与设备相关的低层操作序列，检查合法性，及时响应中断请求。</p>
+<p>2&gt;特点：属于低级的系统例程。</p>
+<p>3&gt;设备处理方式：不设置专门的设备处理进程，只设置驱动程序供用户或系统进程调用。</p>
+</li>
+<li><h5 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h5><p>1&gt;将抽象要求转换为具体要求</p>
+<p>2&gt;对服务请求进行校验</p>
+<p>3&gt;检查设备的状态</p>
+<p>4&gt;传送必要的参数</p>
+<p>5&gt;启动I/O设备</p>
+<p>在多道程序系统中，驱动程序一旦发出I/O请求，启动了一个I/O操作后，便把控制返回给I/O系统，自我阻塞，直到中断到来时再被唤醒，具体的I/O操作是在设备控制器的控制下进行的，实现了处理机和设备的并行操作。</p>
+</li>
+<li><h5 id="对I-O设备的控制方式"><a href="#对I-O设备的控制方式" class="headerlink" title="对I/O设备的控制方式"></a>对I/O设备的控制方式</h5><p>尽量减少主机对I/O控制的干预，让主机得以完成更多的数据处理任务，而不是I/O控制事务。</p>
+<p>1&gt;使用轮询的可编程I/O方式</p>
+<p>2&gt;使用中断的可编程I/O方式</p>
+<p>3&gt;直接存储器访问方式</p>
+<p>4&gt;I/O通道控制方式</p>
+</li>
+</ul>
+<h4 id="6-5-与设备无关的I-O软件"><a href="#6-5-与设备无关的I-O软件" class="headerlink" title="6.5  与设备无关的I/O软件"></a>6.5  与设备无关的I/O软件</h4><p>为了方便用户和提高OS的可适应性与可扩展性，现代OS的I/O系统中都增加了与设备无关的I/O软件以实现设备独立性。</p>
+<p>应用程序中所用的设备，不局限于使用某个具体的物理设备。为每个设备所配置的设备驱动程序是与硬件紧密相关的软件，为了实现设备独立性，必须再在设备驱动程序之上设置一层软件，称为与设备无关的I/O软件。</p>
+<ul>
+<li><h5 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h5><p>以逻辑设备名使用I/O设备，当应用程序请求I/O设备时，系统去寻找某一台空闲的I/O设备，然后将逻辑设备名称转换成物理设备名称。</p>
+</li>
+<li><h5 id="与设备无关的软件"><a href="#与设备无关的软件" class="headerlink" title="与设备无关的软件"></a>与设备无关的软件</h5><p>与设备无关的软件是I/O系统的最高层软件，在与设备无关的软件中，包括了执行所有设备公有操作的软件。</p>
+<p>1&gt;设备驱动程序的统一接口</p>
+<p>2&gt;缓冲管理</p>
+<p>3&gt;差错控制</p>
+<p>4&gt;对独立设备的分配与回收</p>
+<p>5&gt;独立于设备的逻辑数据块</p>
+</li>
+<li><h5 id="设备分配"><a href="#设备分配" class="headerlink" title="设备分配"></a>设备分配</h5><p>系统为实现对独占设备的分配，必须在系统中配置相应的数据结构</p>
+<p>1&gt;设备分配中的数据结构：设备控制表DCT</p>
+<p>2&gt;设备分配时应考虑的因素：设备的固有属性，分配算法，安全性</p>
+<p>3&gt;独占设备的分配程序</p>
+</li>
+<li><h5 id="逻辑设备名到物理设备名映射的实现"><a href="#逻辑设备名到物理设备名映射的实现" class="headerlink" title="逻辑设备名到物理设备名映射的实现"></a>逻辑设备名到物理设备名映射的实现</h5><p>使用逻辑设备表，每个表目中有三项：逻辑设备名、物理设备名、设备驱动程序的入口地址。</p>
+</li>
+</ul>
+<h4 id="6-6-用户层的I-O软件"><a href="#6-6-用户层的I-O软件" class="headerlink" title="6.6  用户层的I/O软件"></a>6.6  用户层的I/O软件</h4><p>一般而言，大部分的I/O软件都放在操作系统内部，但仍有一小部分在用户层，其中包括与用户程序链接在一起的库函数，以及完全运行于内核之外的假脱机系统。</p>
+<ul>
+<li><h5 id="系统调用和库函数"><a href="#系统调用和库函数" class="headerlink" title="系统调用和库函数"></a>系统调用和库函数</h5><p>1&gt;运行在用户态的应用进程不能直接调用运行在核心态（系统态）的OS过程。OS在用户层引入了一个中介过程—-系统调用，应用程序可以通过它间接调用OS中的I/O过程，对I/O设备进行操作。</p>
+<p>事实上，用OS向用户提供的所有功能，用户进程都必须通过系统调用来获取。</p>
+<p>2&gt;库函数：内核提供了OS的基本功能，而库函数扩展了OS内核，使用户能方便取得操作系统的服务，在现代OS中，系统调用本身已采用C语言编写，并以函数形式提供，使用C语言编写的用户程序可以直接使用这些系统调用。</p>
+</li>
+<li><h5 id="假脱机系统"><a href="#假脱机系统" class="headerlink" title="假脱机系统"></a>假脱机系统</h5><p>通过多道程序技术可将一台物理CPU虚拟为多台逻辑CPU，从而允许多个用户共享一台主机。通过假脱机系统，则可以将一台物理I/O设备虚拟为多台逻辑I/O设备，允许多个用户共享一台物理I/O设备。</p>
+</li>
+</ul>
+<h4 id="6-7-缓冲区管理"><a href="#6-7-缓冲区管理" class="headerlink" title="6.7  缓冲区管理"></a>6.7  缓冲区管理</h4><p>缓冲区是一个存储区域，一般情况下，利用内存作为缓冲区，缓冲区管理的主要功能是组织好这些缓冲区，并提供获得和释放缓冲区的手段。</p>
+<h4 id="6-8-磁盘存储器的性能和调度"><a href="#6-8-磁盘存储器的性能和调度" class="headerlink" title="6.8  磁盘存储器的性能和调度"></a>6.8  磁盘存储器的性能和调度</h4><ul>
+<li><h5 id="磁盘性能简述"><a href="#磁盘性能简述" class="headerlink" title="磁盘性能简述"></a>磁盘性能简述</h5><p>1&gt;数据的组织和格式：磁盘设备可包括一个或多个物理盘片，每个盘片分一个或两个存储面。</p>
+<p>​    每个盘面上有若干磁道（柱面），每条磁道可存储相同数目的二进制位。</p>
+<p>​    每条磁道从逻辑上划分为若干个扇区。一个扇区称为一个盘块。</p>
+<p>为了在磁盘上存储数据，必须先将磁盘低级格式化。然后再对磁盘进行分区，在逻辑上每个分区就是一个独立的逻辑磁盘。在真正可以使用磁盘前，还需要对磁盘进行一次高级格式化，设置一个引导块、空闲存储管理、根目录和一个空文件系统，同时在分区表中标记该分区所使用的文件系统。</p>
+<p>2&gt;磁盘的类型</p>
+<p>固定头磁盘：，每条磁道上都有一个磁头</p>
+<p>移动头磁盘：每个盘面只有一个磁头。</p>
+</li>
+<li><h5 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h5><p>1&gt;先来先服务</p>
+<p>2&gt;最短寻道时间</p>
+<p>3&gt;基于扫描的磁盘调度算法</p>
+</li>
+</ul>
+<h3 id="第七章-文件管理"><a href="#第七章-文件管理" class="headerlink" title="第七章  文件管理"></a>第七章  文件管理</h3><p>操作系统中的文件管理功能专门管理在外存上的文件，并把对文件的存取，共享和保护等手段提供给用户。</p>
+<h4 id="7-1-文件和文件系统"><a href="#7-1-文件和文件系统" class="headerlink" title="7.1  文件和文件系统"></a>7.1  文件和文件系统</h4><p>文件系统的管理功能是将其管理的程序和数据通过组织为一系列文件的方式实现的。</p>
+<ul>
+<li><h5 id="数据项、记录和文件"><a href="#数据项、记录和文件" class="headerlink" title="数据项、记录和文件"></a>数据项、记录和文件</h5><p>1&gt;数据项：用于描述一个对象的某种属性的字符集，又称为字段。如学号、姓名。</p>
+<p>2&gt;记录：一组相关数据项的集合，每个记录中需要用一个或多个数据项作为关键字（key）</p>
+<p>3&gt;文件：文件分为有结构文件和无结构文件。前者由若干相关记录组成，后者是一个字符流。</p>
+</li>
+<li><h5 id="文件名和类型"><a href="#文件名和类型" class="headerlink" title="文件名和类型"></a>文件名和类型</h5><p>1&gt;文件名和扩展名：扩展名方便系统和用户了解文件类型。</p>
+<p>2&gt;文件类型：可使用多种分类方法对文件进行分类，如按用途分，按数据形式分。</p>
+</li>
+<li><h5 id="文件系统的层次结构"><a href="#文件系统的层次结构" class="headerlink" title="文件系统的层次结构"></a>文件系统的层次结构</h5><p>文件系统的模型可分为三个层次：对象及属性-&gt;对对象进行操纵和管理的软件集合-&gt;文件系统接口</p>
+</li>
+<li><h5 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h5><p>1&gt;基本文件操作：创建，删除，读写，设置文件读写位置。</p>
+<p>2&gt;文件打开和关闭：打开是指系统将指定文件的属性从外存拷贝到内存文件打开表中的一个表目。</p>
+<p>3&gt;其他文件操作：设置和获得文件的属性，如改变文件名，文件主，访问权以及查询文件状态。</p>
+</li>
+</ul>
+<h4 id="7-2-文件的逻辑结构"><a href="#7-2-文件的逻辑结构" class="headerlink" title="7.2  文件的逻辑结构"></a>7.2  文件的逻辑结构</h4><p>文件的逻辑结构这是从用户观点出发所观察到的文件组织形式，即文件是由一系列的记录逻辑组成的，是用户可以直接处理的数据及其结构，它独立于文件的物理特性，又称文件组织。</p>
+<p>文件的物理结构又称文件的存储结构，是指系统将文件存储在外存上所形成的一种存储组织形式。</p>
+<ul>
+<li><h5 id="按文件是否有结构分类"><a href="#按文件是否有结构分类" class="headerlink" title="按文件是否有结构分类"></a>按文件是否有结构分类</h5><p>1&gt;有结构文件：又称记录式文件，记录的长度分为定长和不定长两类</p>
+<p>2&gt;无结构文件：流式文件，文件长度以字节为单位，可看做一个记录仅有一个字节。</p>
+</li>
+<li><h5 id="按文件的组织方式分类"><a href="#按文件的组织方式分类" class="headerlink" title="按文件的组织方式分类"></a>按文件的组织方式分类</h5><p>把有结构文件分为三类</p>
+<p>1&gt;顺序文件：一系列记录按某种顺序排列所形成的文件</p>
+<p>2&gt;索引文件：为可变长记录文件建立一张索引表，每个记录设置一个表项。</p>
+<p>3&gt;索引顺序文件：为一组记录中的第一个记录建一个索引表项。</p>
+</li>
+</ul>
+<h4 id="7-3-文件目录"><a href="#7-3-文件目录" class="headerlink" title="7.3  文件目录"></a>7.3  文件目录</h4><p>通过文件目录对文件加以管理组织，目录管理有以下要求：实现“按名存取”、提高对目录的检索速度、文件共享、允许文件重名。</p>
+<ul>
+<li><h5 id="文件控制块和索引结点"><a href="#文件控制块和索引结点" class="headerlink" title="文件控制块和索引结点"></a>文件控制块和索引结点</h5><p>每个文件需要设置一个“文件控制块”用于描述和控制文件的数据结构，文件和文件控制块一一对应，把文件控制块的有序集合称为文件目录，一个控制块就是一个文件目录项。一个文件目录被称为目录文件。</p>
+<p>1&gt;文件控制块FCB：包含三类信息，基本信息、存取控制信息和使用信息</p>
+<p>2&gt;索引结点：使文件描述信息单独形成一个称为索引结点的数据结构。减小目录项大小，节省系统开销。</p>
+</li>
+</ul>
+<h4 id="7-4-文件共享"><a href="#7-4-文件共享" class="headerlink" title="7.4  文件共享"></a>7.4  文件共享</h4><p>系统允许多个用户（进程）共享同一份文件。</p>
+<ul>
+<li><h5 id="基于有向无循环图实现文件共享"><a href="#基于有向无循环图实现文件共享" class="headerlink" title="基于有向无循环图实现文件共享"></a>基于有向无循环图实现文件共享</h5></li>
+<li><h5 id="利用符号链接实现文件共享"><a href="#利用符号链接实现文件共享" class="headerlink" title="利用符号链接实现文件共享"></a>利用符号链接实现文件共享</h5></li>
+</ul>
+<h4 id="7-5-文件保护"><a href="#7-5-文件保护" class="headerlink" title="7.5  文件保护"></a>7.5  文件保护</h4><p>为了确保文件系统的安全性，采取三方面的措施：通过存取控制机制，采取系统容错技术，建立后备系统。</p>
+<h3 id="第八章-磁盘存储器的管理"><a href="#第八章-磁盘存储器的管理" class="headerlink" title="第八章  磁盘存储器的管理"></a>第八章  磁盘存储器的管理</h3><p>磁盘存储器容量大，存取速度快，可以实现随机存取，它是当前实现虚拟存储器和存放文件最理想的外存。</p>
+<p>主要任务和要求：有效利用存储空间，提高磁盘的I/O速度，提高磁盘的可靠性。</p>
+<h4 id="8-1-外存的组织方式"><a href="#8-1-外存的组织方式" class="headerlink" title="8.1  外存的组织方式"></a>8.1  外存的组织方式</h4><ul>
+<li><h5 id="连续组织方式"><a href="#连续组织方式" class="headerlink" title="连续组织方式"></a>连续组织方式</h5><p>连续组织方式又称连续分配方式，要求为每一个文件分配一组相邻接的盘块，称为顺序文件。</p>
+</li>
+<li><h5 id="链接组织方式"><a href="#链接组织方式" class="headerlink" title="链接组织方式"></a>链接组织方式</h5><p>将文件装到多个离散的盘中，为文件分配多个不连续的盘块，通过每个盘块中的链接指针链接成一个链表，这样的文件称为链接文件。</p>
+<h5 id="1-gt-FAT技术：文件分配表FAT记录每个文件中所有盘块之间的链接。"><a href="#1-gt-FAT技术：文件分配表FAT记录每个文件中所有盘块之间的链接。" class="headerlink" title="1&gt;FAT技术：文件分配表FAT记录每个文件中所有盘块之间的链接。"></a>1&gt;FAT技术：文件分配表FAT记录每个文件中所有盘块之间的链接。</h5><p>在FAT中引入了“卷”的概念，支持将一个物理磁盘分成四个逻辑磁盘，每个逻辑磁盘就是一个卷（也称分区），也就是说每一个卷都是一个能够被单独格式化和使用的逻辑单元，供文件系统分配空间使用。</p>
+<p>通常对仅有一个硬盘的计算机，最多可以分为“C:”，”D:”和“E:”，“F:”四个卷。</p>
+<p>一个物理磁盘可以划分为多个卷，一个卷也可以由多个物理磁盘组成。</p>
+<p>早期FAT以盘块（扇区）为分配单位，后来以簇为单位，簇的大小为2n个盘块。根据表项长度（位数）的不同分为FAT12，FAT16，FAT32。</p>
+<h5 id="2-gt-NTFS的文件组织方式"><a href="#2-gt-NTFS的文件组织方式" class="headerlink" title="2&gt;NTFS的文件组织方式"></a>2&gt;NTFS的文件组织方式</h5><p>NTFS是以簇作为磁盘空间分配和回收的基本单位，一个文件占用若干簇，一个簇只属于一个文件。在为文件分配磁盘空间时无须知道盘块的大小，只要根据不同的磁盘容量选择相应大小的簇，NTFS具有了与磁盘物理块大小无关的独立性。</p>
+<p>在NTFS文件系统中把卷上簇的大小称为“卷因子”，它是在磁盘格式化时确定的，其大小也是物理磁盘扇区的整数倍。簇的大小可由格式化命令按磁盘容量和应用需求来确定。 </p>
+<p>在NTFS中，以卷为单位，将一个卷中所有文件信息、目录信息以及可用的未分配空间信息，都以文件记录的方式记录在一张主控文件表MFT中，该表是NTFS卷结构的中心，从逻辑上讲，卷中的每个文件作为一条记录，在MFT表中占有一行。</p>
+</li>
+<li><h5 id="索引组织方式"><a href="#索引组织方式" class="headerlink" title="索引组织方式"></a>索引组织方式</h5><p>为每个文件分配一个索引块（表），把分配给该文件的所有盘块号都记录在该索引块中，在打开某个文件时不需要将整个FAT表调入内存。</p>
+<p>1&gt;单级索引组织方式</p>
+<p>2&gt;多级索引组织方式</p>
+<p>3&gt;增量式索引组织方式</p>
+</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        Reward
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>Copyright： </strong>
+              Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/04/14/python%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            python基础
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/04/10/hexo%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">hexo的使用</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2015-2020
+        John Doe
+      </li>
+      <li>
+        
+        Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="fhl&#39;s blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+    
+  </div>
+</body>
+
+</html>
